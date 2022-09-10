@@ -1,0 +1,75 @@
+@import 'bootstrap/dist/css/bootstrap';
+html,
+body {
+  height: 100%;
+  box-sizing: content-box;
+}
+#page-content {
+  background-color: lavender;
+}
+
+.navbar {
+  background-color: dimgray;
+}
+.collapse {
+  justify-content: space-between;
+}
+
+.nav-link {
+  color: white;
+}
+
+#logo {
+  color: white;
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+#home-container {
+  margin-top: 2rem;
+}
+
+#jumbotron {
+  background-image: asset-url('jumbo-bkgrd.jpg');
+  // background-image: asset-url('StripCanoe1.jpg');
+  background-size: cover;
+  background-position: center center;
+  // height: 600px;
+}
+
+#jumbotron h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 0 0 1px coral, 0 0 1px coral, 0 0 1px coral, 0 0 1px coral;
+}
+#jumbotron p {
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+  text-align: center;
+  text-shadow: 0 0 1px coral, 0 0 1px coral, 0 0 1px coral, 0 0 1px coral;
+}
+
+#page-content {
+  flex-shrink: none;
+}
+
+footer {
+  background-color: dimgray;
+}
