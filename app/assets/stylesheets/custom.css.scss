@@ -5,6 +5,7 @@ body {
   box-sizing: content-box;
 }
 #page-content {
+  flex: 1 0 auto;
   background-color: lavender;
 }
 
@@ -64,10 +65,6 @@ body {
   margin-bottom: 18px;
   text-align: center;
   text-shadow: 0 0 1px coral, 0 0 1px coral, 0 0 1px coral, 0 0 1px coral;
-}
-
-#page-content {
-  flex-shrink: none;
 }
 
 footer {

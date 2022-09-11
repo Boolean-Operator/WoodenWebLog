@@ -7,6 +7,7 @@ Things you may want to cover:
 
 - Ruby 2.7.0p0
 - Rails 6.1.6.1
+- Bootstrap 5.2
 
 - System dependencies
 

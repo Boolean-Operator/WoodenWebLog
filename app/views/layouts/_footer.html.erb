@@ -1,20 +1,20 @@
-<footer class="d-flex flex-wrap mt-auto py-1 border-top justify-content-between">
+<nav class="navbar fixed-bottom mt-auto py-1 border-top justify-content-between">
   <div class="col-md-4 text-white">
   <small>
-    <p class="d-flex align-items-center">Copyright &copy;<%=link_to "Mark T Graybill", "https://www.marktgraybill.com", class: "text-white" %></p>
+    <div class="d-flex align-items-center">Copyright &copy;<%=link_to "Mark T Graybill", "https://www.marktgraybill.com", class: "text-white" %></div>
   </small>
   </div>
-
+  
   
   <ul class="nav col-md-4 justify-content-end ">
     <li class="nav-item">
       <%= link_to "Home", root_path, class: "nav-link text-white" %>
     </li>
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Features</a></li>
-   
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
     <li class="nav-item">
       <%= link_to "About", about_path, class: "nav-link text-white" %>
     </li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Features</a></li>
+   
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
   </ul>
-</footer>
+</nav>
