@@ -5,7 +5,12 @@
       <div class="container ">
         <div class="card text-center shadow mb-5 bg-body rounded">
           <div class="card-header bg-secondary text-white">
-            <em>by <%= @article.user.username if @article.user %></em>
+            <em>
+            <% if @article.user %>
+              <%=link_to avatar_for(@article.user, size: '80x80'), user_path(@article.user) %>
+              by <%= @article.user.username %>
+              <%end%>
+            </em>
           </div>
           <div class="card-body ">
             <div class="card-text text-left"><%=simple_format(@article.description)%></div>
