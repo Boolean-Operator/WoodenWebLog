@@ -1,3 +1,10 @@
   <h1 class="text-center mt-4">Wooden Web Loggers</h1>
-  <%= render 'user' %>
+    
+<div class="flickr_pagination">
+  <%= will_paginate @users, :container => false %>
+</div>
+<%= render 'user' %>
+<div class="flickr_pagination pb-4 mb-5">
+  <%= will_paginate @users, :container => false %>
+</div>
 
