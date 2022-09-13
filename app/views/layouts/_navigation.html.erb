@@ -36,12 +36,21 @@
             <li><%= link_to "About", about_path, class: "dropdown-item" %>
           </ul>
         </li>
-        <li class="nav-item">
-          <%= link_to "Log In", login_path, class: "nav-link text-white"%>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Log Out", logout_path, class: "nav-link text-white", method: :delete %>
-        </li>
+        <% if logged_in? %>
+          <li class="nav-item">
+            <%= link_to current_user.username, user_path(current_user), class: "nav-link text-white" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log Out", logout_path, class: "nav-link text-white", method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Log In", login_path, class: "nav-link text-white"%>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign Up", signup_path, class: "nav-link text-white"%>
+          </li>
+        <% end %>
         
       </ul>
       <form class="d-flex" role="search">
