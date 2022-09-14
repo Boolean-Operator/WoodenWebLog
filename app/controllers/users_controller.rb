@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_user, only: [:edit, :update]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   
   def index
     @users = User.paginate(page: params[:page], per_page: 4)
@@ -32,10 +32,17 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Welcome the Wooden Web Log #{@user.username}, you have successfully joined."
-      redirect_to articles_path
+      redirect_to @user
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @user.destroy
+    session[:user_id] = nil
+    flash[:notice]  = "Account and all associated articles have been deleted."
+    redirect_to root_path
   end
 
 
@@ -47,7 +54,6 @@ class UsersController < ApplicationController
   def require_same_user
     if current_user != @user
       flash[:alert] = "You may only update your own profile"
-      redirect_to @user
     end
   end
 

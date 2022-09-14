@@ -55,6 +55,7 @@
           <ul class="dropdown-menu">
             <li><%= link_to "Profile", user_path(current_user), class: "dropdown-item" %></li>
             <li><%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %></li>
+            <li><%= link_to "Delete Profile", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: { confirm: "Are you sure? All of your articles will also be deleted. This action is permanent and cannot be revesed."} %></li>
           </ul>
         </li>
           
