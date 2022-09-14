@@ -49,7 +49,7 @@
             aria-expanded="false"
           >
           <div class="d-inline-flex">
-            <%= current_user.username %>&nbsp;<%= avatar_for current_user, size: '25x25' %>
+            <%= "[Admin]" if current_user.admin? %>&nbsp;<%= current_user.username %>&nbsp;<%= avatar_for current_user, size: '25x25' %>
           </div>
           </a>
           <ul class="dropdown-menu">

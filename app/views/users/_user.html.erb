@@ -13,8 +13,14 @@
           <h5 class="card-title "><%=link_to avatar_for(user, size: '150x150'), user %></h5>
             <p class="card-text"><%= pluralize(user.articles.count, 'article')%></p>
               <%= link_to 'View Profile', user_path(user),  class: "btn btn-outline-success" %>
-            <% if logged_in? && user == current_user %>
-              <%= link_to 'Edit Profile', edit_user_path(user), class: "btn btn-outline-info" %>
+            <% if logged_in? %>
+              <% if user == current_user %>
+                <%= link_to 'Edit Profile', edit_user_path(user), class: "btn btn-outline-info" %>
+              <% end %>
+                <% if current_user.admin? %>
+                  <%= link_to "Delete Profile", user_path(user), class: "btn btn-outline-danger", method: :delete,
+                 data: { confirm: "Are you sure? Account and all associated articles will also be deleted. This action is permanent and cannot be revesed."} %>
+              <% end %>
             <% end %>
           </div>
           <div class="card-footer bg-secondary text-white-50 ">
