@@ -29,17 +29,35 @@
             Articles
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Articles", articles_path, class: "dropdown-item"%></li>
-            <li><%= link_to "New", new_article_path, class: "dropdown-item" %></li>
+            <% if logged_in? %>
+              <li><%= link_to "Create New", new_article_path, class: "dropdown-item" %></li>
+            <%end%>
+            <li><%= link_to "View All", articles_path, class: "dropdown-item"%></li>
             <li><hr class="dropdown-divider" /></li>
             <li><%= link_to "Home", root_path, class: "dropdown-item" %>
             <li><%= link_to "About", about_path, class: "dropdown-item" %>
           </ul>
         </li>
+
         <% if logged_in? %>
-          <li class="nav-item">
-            <%= link_to current_user.username, user_path(current_user), class: "nav-link text-white" %>
-          </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-white"
+            href="#"
+            role="button"
+            data-toggle="dropdown"
+            aria-expanded="false"
+          >
+          <div class="d-inline-flex">
+            <%= current_user.username %>&nbsp;<%= avatar_for current_user, size: '25x25' %>
+          </div>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Profile", user_path(current_user), class: "dropdown-item" %></li>
+            <li><%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item" %></li>
+          </ul>
+        </li>
+          
           <li class="nav-item">
             <%= link_to "Log Out", logout_path, class: "nav-link text-white", method: :delete %>
           </li>
@@ -65,3 +83,7 @@
     </div>
   </div>
 </nav>
+
+<!-- 
+FIXME - Move login/icon/sign up to far right of nav bar
+-->
