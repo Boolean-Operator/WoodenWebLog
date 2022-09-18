@@ -10,6 +10,11 @@
             <%if article.user%>
             by <%= link_to article.user.username, user_path(article.user), class: "text-light"  %>
             <%end%>
+            <% if article.categories.any? %>
+              <div class="mt-2">
+                <%= render article.categories %>
+              </div>
+            <% end %>
             </em>
           </div>
           <div class="card-body ">

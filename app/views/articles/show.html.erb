@@ -7,10 +7,15 @@
           <div class="card-header bg-secondary text-white">
             <em>
             <% if @article.user %>
-              <%=link_to avatar_for(@article.user, size: '80x80'), user_path(@article.user) %>
               by <%= @article.user.username %>
+              <%=link_to avatar_for(@article.user, size: '80x80'), user_path(@article.user) %>
               <%end%>
             </em>
+            <% if @article.categories.any? %>
+              <div class="mt-2">
+                <%= render @article.categories %>
+              </div>
+            <% end %>
           </div>
           <div class="card-body ">
             <div class="card-text text-left"><%=simple_format(@article.description)%></div>
