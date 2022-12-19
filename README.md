@@ -10,9 +10,6 @@ Stack:
 - Bootstrap 4.4.1
 - sqlite3 1.4
 
-- Configuration
-
 - Database creation
-
-  - developemnt - sqlite3
+  - development - sqlite3
   - production - mysql/postgres
